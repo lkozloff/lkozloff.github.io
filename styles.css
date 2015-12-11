@@ -15,8 +15,19 @@ h1{
     font-size: 4em;
     margin-bottom: 0;
 }
+a{
+    color: #424a4f;
+}
+a:hover{
+    color: #97cb9b;
+}
+
 
 h3{
     margin-top: 0;
     color: #97cb9b;
+}
+.gray{
+    background-color: #424a4f;
+    color: white;
 }
