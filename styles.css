@@ -6,15 +6,28 @@ body{
     top: 0;
     bottom: 0;
     left: 0;
+    width: 100%;
 }
-p{
+p,li{
     font-size: 1.5em;
 }
+
 
 h1{
     font-size: 4em;
     margin-bottom: 0;
 }
+p a{
+  color: #97cb9b;
+}
+
+h3 a{
+  color: #97cb9b;
+}
+a h3{
+  color: #97cb9b;
+}
+
 a{
     color: #424a4f;
 }
@@ -25,7 +38,6 @@ a:hover{
 
 h3{
     margin-top: 0;
-    color: #97cb9b;
 }
 .gray{
     background-color: #424a4f;
