@@ -40,18 +40,20 @@
       txtend = '"/>'
       i=start;
 
-      while(i<end){
+      while(i<=end){
         row = $('<tr></tr>');
         for(j=0; j<columns; j++){
 
           col = $('<td></td>').append(
               $(txt+i+txtend).JsBarcode(prepend+i, {displayValue:true, fontSize:10, height: 30, width: 1})
           )
-          i++;
           row.append(col);
+          i++;
+          if(i>end){ break; }
         }
+
         table.append(row)
-        if(i>end){ break; }
+
 
       }
 
