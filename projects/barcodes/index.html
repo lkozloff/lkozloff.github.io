@@ -36,27 +36,26 @@
 
       var table = $('<table></table>').appendTo('#barcodes');
 
-      txt = '<img class="no-resize" id="barcode'
+      txt = '<img id="barcode'
       txtend = '"/>'
       i=start;
-
+      console.log('i is: '+i);
+      console.log('end is: '+end);
+      console.log('i<=end'+(i<=end))
       while(i<=end){
+        console.log('loop!');
+        //add a new row object to put things in
         row = $('<tr></tr>');
         for(j=0; j<columns; j++){
-
           col = $('<td></td>').append(
-              $(txt+i+txtend).JsBarcode(prepend+i, {displayValue:true, fontSize:10, height: 30, width: 1})
+              $(txt+i+txtend).JsBarcode(prepend+(i.toString()), {displayValue:true, fontSize:10, height: 30, width: 1})
           )
-          row.append(col);
+          row.append(col); //put a new column in the row
           i++;
-          if(i>end){ break; }
+          if(i>end){ break; } //break if we're done, no need to add anything else.
         }
-
-        table.append(row)
-
-
+        table.append(row) //add the row to the table
       }
-
     };
 
 
@@ -65,11 +64,10 @@
     //when something changes, update the whole page
     $(document).on('change', 'input', function(){
       $('#barcodes').empty();
-      var start = $('#startingnumber').val();
-      var end = $('#endnumber').val();
+      var start = parseInt($('#startingnumber').val());
+      var end = parseInt($('#endnumber').val());
       var prepend = $('#prepend').val();
-      var columns = $('#columns').val();
-      console.log(columns)
+      var columns = parseInt($('#columns').val());
       generateBarcodes(start,end,prepend,columns)
     });
     //lets get it started!
