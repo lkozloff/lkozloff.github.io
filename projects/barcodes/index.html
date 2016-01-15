@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous">
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script src="JsBarcode/CODE128.js"></script>
+  <script src="JsBarcode/JsBarcode.js"></script>
+  <style>
+    @media print{
+    #controls{
+      display: none;
+    }
+  }
+  </style>
+
+
+</head>
+<body>
+  <div id="controls">
+    <label>Starting Number: </label>
+    <input id="startingnumber" type="text" value='0' />
+    <label>Ending Number: </label>
+    <input id="endnumber" type="text" value='10' />
+    <label>Text to Prepend to number: </label>
+    <input id="prepend" type="text" value='library'/>
+    <label>Columns: </label>
+    <input id="columns" type="text" value='4' />
+  </div>
+  <div id="barcodes" class="container">
+  </div>
+  <script>
+  $(function(){
+    var generateBarcodes = function(start,end,prepend,columns){
+
+      var table = $('<table></table>').appendTo('#barcodes');
+
+      txt = '<img class="no-resize" id="barcode'
+      txtend = '"/>'
+      i=start;
+
+      while(i<end){
+        row = $('<tr></tr>');
+        for(j=0; j<columns; j++){
+
+          col = $('<td></td>').append(
+              $(txt+i+txtend).JsBarcode(prepend+i, {displayValue:true, fontSize:10, height: 30, width: 1})
+          )
+          i++;
+          row.append(col);
+        }
+        table.append(row)
+        if(i>end){ break; }
+
+      }
+
+    };
+
+
+
+
+    //when something changes, update the whole page
+    $(document).on('change', 'input', function(){
+      $('#barcodes').empty();
+      var start = $('#startingnumber').val();
+      var end = $('#endnumber').val();
+      var prepend = $('#prepend').val();
+      var columns = $('#columns').val();
+      console.log(columns)
+      generateBarcodes(start,end,prepend,columns)
+    });
+    //lets get it started!
+    generateBarcodes($('#startingnumber').val(),$('#endnumber').val(),$('#prepend').val(),$('#columns').val() );
+
+  });
+  </script>
+</body>
+</html>
