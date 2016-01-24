@@ -33,7 +33,7 @@
 		var canvas = image;
 
 		// check if it is a jQuery object
-		if ($ && canvas instanceof $) {
+		if (window.jQuery && canvas instanceof jQuery) {
 			// get the DOM element of the object
 			canvas = image.get(0);
 		}
@@ -53,13 +53,13 @@
 		//Abort if the barcode format does not support the content
 		if(!encoder.valid()){
 		    validFunctionIfExist(false);
-			throw new Error('The data is not valid for the type of barcode.');
+			return this;
 		}
 
 		//Encode the content
 		var binary = encoder.encoded();
 
-		var _drawBarcodeText = function (text) {
+		var _drawBarcodeText = function (text,headerText) {
 					var x, y;
 
 					y = options.height;
@@ -80,8 +80,11 @@
 						x = canvas.width / 2;
 						ctx.textAlign = 'center';
 					}
-
-					ctx.fillText(text, x, y);
+					if(options)
+					if(options.displayHeaderText){
+				  	ctx.fillText(headerText, x, 0);
+					}
+					ctx.fillText(text, x, y+(options.displayHeaderText ? options.fontSize *1.3: 0));
 				}
 
 		//Get the canvas context
@@ -91,7 +94,10 @@
 		canvas.width = binary.length*options.width+2*options.quite;
         //Set extra height if the value is displayed under the barcode. Multiplication with 1.3 t0 ensure that some
         //characters are not cut in half
-		canvas.height = options.height + (options.displayValue ? options.fontSize * 1.3 : 0);
+		canvas.height = options.height + (options.displayValue ? options.fontSize * 1.3 : 0)
+																	 + (options.displayHeaderText ? options.fontSize *1.3: 0);
+
+
 
 		//Paint the canvas
 		ctx.clearRect(0,0,canvas.width,canvas.height);
@@ -105,19 +111,19 @@
 		for(var i=0;i<binary.length;i++){
 			var x = i*options.width+options.quite;
 			if(binary[i] == "1"){
-				ctx.fillRect(x,0,options.width,options.height);
+				ctx.fillRect(x,10,options.width,options.height);
 			}
 		}
 
 		if(options.displayValue){
-			_drawBarcodeText(encoder.getText());
+			_drawBarcodeText(content,options.headerText);
 		}
 
 		//Grab the dataUri from the canvas
 		uri = canvas.toDataURL('image/png');
 
 		// check if given image is a jQuery object
-		if ($ && image instanceof $) {
+		if (window.jQuery && image instanceof jQuery) {
 			// check if DOM element of jQuery selection is not a canvas, so assume that it is an image
 			if (!(image.get(0) instanceof HTMLCanvasElement)) {
 				 //Put the data uri into the image
@@ -144,14 +150,16 @@
 		textAlign:"center",
 		fontSize: 12,
 		backgroundColor:"",
-		lineColor:"#000"
+		lineColor:"#000",
+		displayHeaderText: true,
+		headerText: "Libraryville Library"
 	};
 
-	if ($) {
+	if (window.jQuery) {
 		$.fn.JsBarcode = function(content, options,validFunction){
 			JsBarcode(this, content, options,validFunction);
 			return this;
 		};
 	}
 
-})(typeof jQuery != 'undefined' ? jQuery : null);
+})(window.jQuery);
