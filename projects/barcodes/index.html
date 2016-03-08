@@ -13,6 +13,12 @@
       display: none;
     }
   }
+	.border{
+		border: 1px solid black;
+	}
+	.noborder{
+		border: none;
+	}
   </style>
 
 
@@ -30,12 +36,26 @@
 
     <label>Columns: </label>
     <input id="columns" type="text" value='4' />
+		<label>Show borders</label>
+		<input type="checkbox" id="borders" name="borders" />
   </div>
   <div id="barcodes" class="container">
   </div>
   <script>
   $(function(){
-    var generateBarcodes = function(headertext,start,end,prepend,columns){
+		var border = '.noborder';
+
+		//toggle border class for tr,td
+		$("#borders").change(function(){
+			if($('#borders').is(':checked')){
+				border = 'border'
+			}
+			else{
+				border = '.noborder';
+			}
+		});
+
+    var generateBarcodes = function(headertext,start,end,prepend,columns,border){
 
       var table = $('<table></table>').appendTo('#barcodes');
 
@@ -45,9 +65,9 @@
 
       while(i<=end){
         //add a new row object to put things in
-        row = $('<tr></tr>');
+        row = $('<tr></tr>').addClass(border);
         for(j=0; j<columns; j++){
-          col = $('<td></td>').append(
+          col = $('<td></td>').addClass(border).append(
               $(txt+i+txtend).JsBarcode(prepend+(i.toString()), {displayValue:true, fontSize:10, height: 30, width: 1, headerText:headertext})
           )
           row.append(col); //put a new column in the row
@@ -69,10 +89,10 @@
       var end = parseInt($('#endnumber').val());
       var prepend = $('#prepend').val();
       var columns = parseInt($('#columns').val());
-      generateBarcodes(headertext,start,end,prepend,columns)
+      generateBarcodes(headertext,start,end,prepend,columns,border)
     });
     //lets get it started!
-    generateBarcodes($('#headertext').val(),$('#startingnumber').val(),$('#endnumber').val(),$('#prepend').val(),$('#columns').val() );
+    generateBarcodes($('#headertext').val(),$('#startingnumber').val(),$('#endnumber').val(),$('#prepend').val(),$('#columns').val(),border );
 
   });
   </script>
