@@ -1,0 +1,54 @@
+==================================================================
+https://keybase.io/lkozloff
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://lyle.work
+  * I am lkozloff (https://keybase.io/lkozloff) on keybase.
+  * I have a public key ASBeiyBeFSl_XQO_WkQ7sgKBU065PGBnZ7EFptOTe8KBxAo
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "01205e8b205e15297f5d03bf5a443bb20281534eb93c606767b105a6d3937bc281c40a",
+            "host": "keybase.io",
+            "kid": "01205e8b205e15297f5d03bf5a443bb20281534eb93c606767b105a6d3937bc281c40a",
+            "uid": "86e22dd44cf07955774b8d843c575a19",
+            "username": "lkozloff"
+        },
+        "service": {
+            "hostname": "lyle.work",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "client": {
+        "name": "keybase.io go client",
+        "version": "1.0.17"
+    },
+    "ctime": 1475112309,
+    "expire_in": 504576000,
+    "merkle_root": {
+        "ctime": 1475112100,
+        "hash": "24f62275cebd5304ed173bb0f79f9a8d9443d3d5f1af790ea74398567740dc1cb93f6e741dd35e39b26b17c0a40a53fb19709cfa24cd8ad8dc64b37c14d92351",
+        "seqno": 657243
+    },
+    "prev": "ca3ba11525657a9507cfb4481186a464a9b6b5f9950463b5014128baec81897a",
+    "seqno": 7,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgXosgXhUpf10Dv1pEO7ICgVNOuTxgZ2exBabTk3vCgcQKp3BheWxvYWTFAvB7ImJvZHkiOnsia2V5Ijp7ImVsZGVzdF9raWQiOiIwMTIwNWU4YjIwNWUxNTI5N2Y1ZDAzYmY1YTQ0M2JiMjAyODE1MzRlYjkzYzYwNjc2N2IxMDVhNmQzOTM3YmMyODFjNDBhIiwiaG9zdCI6ImtleWJhc2UuaW8iLCJraWQiOiIwMTIwNWU4YjIwNWUxNTI5N2Y1ZDAzYmY1YTQ0M2JiMjAyODE1MzRlYjkzYzYwNjc2N2IxMDVhNmQzOTM3YmMyODFjNDBhIiwidWlkIjoiODZlMjJkZDQ0Y2YwNzk1NTc3NGI4ZDg0M2M1NzVhMTkiLCJ1c2VybmFtZSI6Imxrb3psb2ZmIn0sInNlcnZpY2UiOnsiaG9zdG5hbWUiOiJseWxlLndvcmsiLCJwcm90b2NvbCI6Imh0dHA6In0sInR5cGUiOiJ3ZWJfc2VydmljZV9iaW5kaW5nIiwidmVyc2lvbiI6MX0sImNsaWVudCI6eyJuYW1lIjoia2V5YmFzZS5pbyBnbyBjbGllbnQiLCJ2ZXJzaW9uIjoiMS4wLjE3In0sImN0aW1lIjoxNDc1MTEyMzA5LCJleHBpcmVfaW4iOjUwNDU3NjAwMCwibWVya2xlX3Jvb3QiOnsiY3RpbWUiOjE0NzUxMTIxMDAsImhhc2giOiIyNGY2MjI3NWNlYmQ1MzA0ZWQxNzNiYjBmNzlmOWE4ZDk0NDNkM2Q1ZjFhZjc5MGVhNzQzOTg1Njc3NDBkYzFjYjkzZjZlNzQxZGQzNWUzOWIyNmIxN2MwYTQwYTUzZmIxOTcwOWNmYTI0Y2Q4YWQ4ZGM2NGIzN2MxNGQ5MjM1MSIsInNlcW5vIjo2NTcyNDN9LCJwcmV2IjoiY2EzYmExMTUyNTY1N2E5NTA3Y2ZiNDQ4MTE4NmE0NjRhOWI2YjVmOTk1MDQ2M2I1MDE0MTI4YmFlYzgxODk3YSIsInNlcW5vIjo3LCJ0YWciOiJzaWduYXR1cmUifaNzaWfEQBb8op3Rapn6EHEE3R7d8w91iBIsIX7Cq9CNGpuRs2FxhgucCP9PAl6eqNkFopV3e7xB/JPtJeMGQKB7xroOhQWoc2lnX3R5cGUgpGhhc2iCpHR5cGUIpXZhbHVlxCDE4AqqbYVZM8uL5Dk/hNRvrn8HSDM2mhOmiDo+1gDYGqN0YWfNAgKndmVyc2lvbgE=
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/lkozloff
+
+==================================================================
