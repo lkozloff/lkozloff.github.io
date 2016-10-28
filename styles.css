@@ -1,4 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Cabin:400,600);
+a[href]:after {
+    content: none !important;
+  }
 body{
     font-family: 'Cabin', sans-serif;
     color: #424a4f;
@@ -45,4 +48,16 @@ h3{
 .gray{
     background-color: #424a4f;
     color: white;
+}
+@media print {
+  a{
+    color: #97cb9b!important;
+  }
+  h4 a[href]:after {
+    content: none !important;
+  }
+
+  .resume-footer {
+    display: none;
+   }
 }
