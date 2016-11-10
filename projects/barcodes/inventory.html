@@ -1,0 +1,137 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous">
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery.csv-0.71.min.js"></script>
+  <script src="JsBarcode/CODE128.js"></script>
+  <script src="JsBarcode/JsBarcode.js"></script>
+  <style>
+    @media print{
+    #controls{
+      display: none;
+    }
+  }
+	.border{
+		border: 1px solid black;
+	}
+	.noborder{
+		border: none;
+	}
+	td{
+		text-align:center;
+		font-size: x-small;
+	}
+  </style>
+
+
+</head>
+<body>
+  <div id="controls">
+
+
+		<label>CSV Input</label><br/>
+		<textarea id="csvdata" rows="4" cols="50">v3iea4,harmanaoanaoer
+a34jk,belizier
+lr84j,abmaierl
+laeru,wouldir
+louerh,phalnider
+pouerl,aermaner</textarea><br/>
+    <label>Columns: </label>
+    <input id="columns" type="text" value='4' />
+		<label>Show borders</label>
+		<input type="checkbox" id="borders" name="borders" />
+		<br/>
+		<label>Padding between labels:<div style="display:inline" id="padding-label">0</div></label>
+		<input type="range" id="padding" name="padding" min="0" max="20" value="0" style="width:25%;"/>
+  </div>
+  <div id="barcodes" class="container">
+  </div>
+  <script>
+  $(function(){
+
+		var border = '.noborder';
+
+		//toggle border class for tr,td
+		$("#borders").change(function(){
+			if($('#borders').is(':checked')){
+				border = 'border'
+			}
+			else{
+				border = '.noborder';
+			}
+		});
+
+    var generateBarcodes = function(csvdata,columns,border){
+
+
+
+      var table = $('<table></table>').appendTo('#barcodes');
+
+      txt = '<img id="barcode'
+      txtend = '"/>'
+
+			//generate an array from the csvdata
+			var labels = $.csv.toArrays(csvdata);
+
+			//loop through the array
+			for(var i=0; i<labels.length;){
+				row = $('<tr></tr>').addClass(border);
+				for(j=0; j<columns; j++){
+					var label = $('<div class="cooolbeanz"></div>');
+					label.append('My name is <strong style="font-size:medium;margin-bottom:0;">'+labels[i][1]+'</strong><br/>')
+					     .append($(txt+i+txtend).JsBarcode(labels[i][0],{displayValue:true, fontSize:15, height: 50, width: 1, headerText:''}))
+							 .append('<br/>This computer is the property of Asian Hope. If found, please contact 089 267 080');
+					col = $('<td></td>').addClass(border).append(label);
+					row.append(col);
+					i++;
+					if(i>=labels.length) break;
+				}
+				table.append(row);
+
+
+			}
+
+    };
+
+
+
+
+    //when something changes, update the whole page
+    $(document).on('change', 'input', function(){
+      $('#barcodes').empty();
+
+      var csvdata = $('#csvdata').val();
+
+      var columns = parseInt($('#columns').val());
+			var padding = parseInt($('#padding').val());
+
+			$('#padding-label').html(padding);
+
+      generateBarcodes(csvdata,columns,border);
+			$('td').css('padding',padding+'px');
+    });
+
+		$(document).on('change', 'textarea', function(){
+			$('#barcodes').empty();
+			var csvdata = $('#csvdata').val();
+			var columns = parseInt($('#columns').val());
+			var padding = parseInt($('#padding').val());
+			$('#padding-label').html(padding);
+
+			generateBarcodes(csvdata,columns,border);
+			$('td').css('padding',padding+'px');
+		});
+
+
+
+    //lets get it started!
+
+    generateBarcodes($('#csvdata').val(),$('#columns').val(),border );
+
+  });
+  </script>
+</body>
+</html>
