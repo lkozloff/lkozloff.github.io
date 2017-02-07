@@ -1,0 +1,150 @@
+{
+  "basics": {
+    "name": "Lyle Kozloff",
+    "label": "MIS Director",
+    "picture": "http://lyle.work/lyle.jpg",
+    "email": "lyle@lyle.work",
+    "phone": "+1-(805)-229-1304",
+    "website": "http://lyle.work",
+    "summary": "Lyle graduated from the California Polytechnic State University in San Luis Obispo (otherwise known as Cal Poly) in 2005 with a degree in Computer Engineering. Upon graduation he spent two years serving in Peace Corps, Benin helping local non-profits and other volunteers with technical projects. Since 2009, Lyle has been managing the technical operations of Asian Hope, a Christian non-profit working in Cambodia. As the MIS Director he works with the leadership team in setting strategy, monitoring and evaluation of programs and oversees internal software development and IT operations. Lyle lives with his family in Phnom Penh. He enjoys learning languages, playing with his children and eating delicious things at one of the city's many excellent restaurants.",
+    "location": {
+      "address": "",
+      "postalCode": "",
+      "city": "Phnom Penh",
+      "countryCode": "KH",
+      "region": "South East Asia"
+    },
+    "profiles": [
+      {
+        "network": "Twitter",
+        "username": "lkozloff",
+        "url": "https://www.twitter.com/lkozloff"
+      },
+      {
+        "network": "GitHub",
+        "username": "lkozloff",
+        "url": "https://www.github.com/lkozloff"
+      },
+      {
+        "network": "KeyBase",
+        "username": "lkozloff",
+        "url": "https://keybase.io/lkozloff"
+      }
+    ]
+  },
+  "work": [
+    {
+      "company": "Asian Hope",
+      "position": "MIS Directory",
+      "website": "http://www.asianhope.org",
+      "startDate": "2009-08-01",
+      "endDate": "Present",
+      "summary": "Asian Hope is an international, Christian nonprofit dedicated to improving the lives of vulnerable children in Cambodia through education. As the MIS Director I work with the leadership team in setting strategy, monitoring and evaluating programs and overseeing internal software development and IT operations.",
+      "highlights": [
+        "transitioned the organization to an open-source stack (Ubuntu based), from server to desktop",
+        "laid out (and wrote large parts of) our monitoring and evaluation system for catch-up school performance",
+        "deployed (and trained staff in the use of) the open source student information system, OpenSIS at Asian Hope schools",
+        "planned and wrote large parts of Asian Hope's Employee Management system, which lets our HR staff input data, print ID cards and business cards into LDAP in a nice, Angular way. It also lets our staff change their passwords and view the company directory.",
+        "wrote a report card system with printable templates that pulls data from our student management system",
+        "deployed Google Apps domains for the organization and schools, including sync to our LDAP server",
+        "deployed JIRA and Confluence for internal documentation and trouble ticketing"
+      ]
+    },
+    {
+      "company": "Japan Exchange and Teaching (JET) Programme",
+      "position": "Assistant Language Teacher",
+      "website": "http://jetprogramme.org/",
+      "startDate": "2007-08-01",
+      "endDate": "2009-08-01",
+      "summary": "The JET Programme is Japanese government initiative that brings native speakers of English to Japan as Assistant Language Teachers (ALT) in local boards of education. As an ALT, I worked in 5 schools in a rural village of 4,500 people. I also ran a Drupal installation that let other ALTs in the same prefecture communicate and organize events. It was really fun.",
+      "highlights": []
+    },
+    {
+      "company": "Andiamo Telecom",
+      "position": "Systems Administrator",
+      "website": "",
+      "startDate": "2003-08-01",
+      "endDate": "2005-08-01",
+      "summary": "Andiamo Telecom was a facilities-based domestic and international carrier that provided a range of telecommunication services such as prepaid calling cards and operator services.",
+      "highlights": [
+        "Maintained network composed of 38 PCs (Windows) and 16 servers (Windows Server / SCO Unix)",
+        "Ensured vital network components and servers were available 24/7",
+        "Launched call center in Tijuana, Mexico",
+        "Trained 5 people in VoIP over VPN technique used to transport voice and data to call center",
+        "Authored financial reporting system used by management to track sales over the course of the day"
+      ]
+    }
+  ],
+  "volunteer": [
+    {
+      "organization": "Peace Corps",
+      "position": "Small Enterprise and Development Volunteer (ICT)",
+      "website": "http://www.peacecorps.gov",
+      "startDate": "2005-07-03",
+      "endDate": "2007-08-01",
+      "summary": "The Peace Corps is an international service organization of the US government. The stated mission of the Peace Corps includes providing technical assistance, helping people outside the United States to understand American culture, and helping Americans to understand the cultures of other countries.",
+      "highlights": [
+        "recruited and trained 27 people in basic web design, HTML/CSS and content management",
+        "trained 5 people in advanced web design, including PHP/MySQL back end design",
+        "managed the conception, creation and development of 3 websites for local non-profits and government agencies",
+        "led training and supervised 7 people in computer hardware troubleshooting",
+        "developed an antenna fabricated from local materials for broadcasting WiFi over distance",
+        "reviewed project proposals (with an ICT component) for feasibility"
+      ]
+    },
+    {
+      "organization": "Tekhin Phnom Penh",
+      "position": "Conference Organizer",
+      "website": "http://tekhx.com",
+      "startDate": "2014",
+      "endDate": "Present",
+      "summary": "Tekhin is an annual tech-integration conference held in Phnom Penh for the educational community here in Cambodia. Our speakers are tech-integrators, educators and IT people who work with youth in Cambodia and want to share best practices, new ideas and have an opportunity to get outside of their normal circles. The typical conference size is 100-150 people. ",
+      "highlights": []
+    }
+  ],
+  "education": [
+    {
+      "institution": "California Polytechnic State University (San Luis Obispo)",
+      "area": "Computer Engineering",
+      "studyType": "Bachelor",
+      "startDate": "2000",
+      "endDate": "2005",
+      "gpa": "",
+      "courses": []
+    }
+  ],
+  "awards": [
+    {
+      "title": "Certified Systems Administrator",
+      "date": "June 2016",
+      "awarder": "Linux Foundation",
+      "summary": "LFCS-1600-0855-0100"
+    }
+  ],
+  "publications": [],
+  "skills": [],
+  "languages": [
+    {
+      "language": "English",
+      "fluency": "Native speaker"
+    },
+    {
+      "language": "ភាសាខ្មែរ (Khmer/Cambodian) ",
+      "fluency": "I can read, write and type Khmer script slowly. In speaking, I'm comfortable in everyday situations but find it difficult to grasp complex topics."
+    },
+    {
+      "language": "日本語 (Japanese)",
+      "fluency": "I can read, write and type basic Japanese, and know approximately 500 kanji. In speaking, I'm comfortable in most situations, and can carry on conversations on a variety of topics. Nearly all of my interactions with my coworkers were in Japanese while I was in the JET Programme."
+    },
+    {
+      "language": "Français (French)",
+      "fluency": "I can read French, but my spelling is so bad I wouldn't say I can write it. As a Peace Corps Volunteer nearly all of my interactions were in French, from basic life tasks and training others in technical topics."
+    },
+    {
+      "language": "Español (Spanish)",
+      "fluency": "I can read, write and speak Spanish reasonably well. At Andiamo I did customer service calls in Spanish and worked with our team in Tijuana, Mexico - but I've never used it much outside of business."
+    }
+  ],
+  "interests": [],
+  "references": []
+}
